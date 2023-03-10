@@ -1,7 +1,9 @@
 import { Nav, Logo, HeaderWrapper } from "./styled";
 import { Navigation } from "./navigate/navigate";
+import { useStore } from "../../store";
 
 export const Header = () => {
+    const { state, dispatch } = useStore();
     const category = [
         {
             path: "/contents",
@@ -14,7 +16,7 @@ export const Header = () => {
         {
             path: "/signup",
             name: "signup",
-            isLogin: false,
+            islogin: false,
         },
         {
             path: "/login",
@@ -32,10 +34,7 @@ export const Header = () => {
             islogin: true,
         },
     ];
-    const state = {
-        islogin: false,
-        user: {},
-    };
+
     return (
         <HeaderWrapper>
             <Logo>HI HI</Logo>
